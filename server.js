@@ -20,6 +20,21 @@ app.get('/api/data', (req, res) => {
           }
         ]
       }
+      {
+        "categoryName": "حر",
+        "channels": [
+          {
+            "name": "hamza English",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Aljazeera_eng.svg/512px-Aljazeera_eng.svg.png",
+            "streamUrl": "https://live-hls-web-aje.getaj.net/AJE/01.m3u8"
+          },
+          {
+            "name": "France 277 English",
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/France_24_logo.svg/512px-France_24_logo.svg.png",
+            "streamUrl": "https://f24hls-i.akamaihd.net/hls/live/2000343/F24_EN_LO_HLS/master.m3u8"
+          }
+        ]
+      }
     ],
     // ✨✨✨ تم تحديث قسم المباريات هنا ✨✨✨
     "matches": [
