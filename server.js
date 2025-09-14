@@ -41,7 +41,7 @@ app.get('/api/data', (req, res) => {
         "team2_flag_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/128px-Flag_of_Iraq.svg.png",
         "match_time": "04:00 PM",
         "competition": "كأس الخليج للشباب تحت 20 سنة",
-        "date_time": "2025-10-25T22:00:00" 
+        "date_time": "2025-10-25T22:00:00",
         "commentator": "راشد عبدالرحمن",
         "channel_name": "Dubai Sports 1",
         "stream_url": "https://live-hls-web-aje.getaj.net/AJE/01.m3u8"
@@ -53,7 +53,7 @@ app.get('/api/data', (req, res) => {
         "team2_flag_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Flag_of_Yemen.svg/128px-Flag_of_Yemen.svg.png",
         "match_time": "06:00 PM",
         "competition": "كأس الخليج للشباب تحت 20 سنة",
-        "date_time": "2025-10-25T22:00:00" 
+        "date_time": "2025-10-25T22:00:00",
         "commentator": "أحمد الشحي",
         "channel_name": "Dubai Sports 1",
         "stream_url": "https://f24hls-i.akamaihd.net/hls/live/2000343/F24_EN_LO_HLS/master.m3u8"
