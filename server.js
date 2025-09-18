@@ -6,7 +6,7 @@ app.get('/api/data', (req, res) => {
   res.json({
     "categories": [
   {
-    "categoryName": "الأخبار",
+    "categoryName": " + رياضه الأخبار",
     "channels": [
       {
         "name": "Al Jazeera English",
@@ -14,9 +14,9 @@ app.get('/api/data', (req, res) => {
         "streamUrl": "https://live-hls-web-aje.getaj.net/AJE/01.m3u8"
       },
       {
-        "name": "France 24 English",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/France_24_logo.svg/512px-France_24_logo.svg.png",
-        "streamUrl": "https://f24hls-i.akamaihd.net/hls/live/2000343/F24_EN_LO_HLS/master.m3u8"
+        "name": "beIN Sport 1",
+        "logo": "",
+        "streamUrl": "http://het104a.4rouwanda-shop.store/live/918454578001/index.m3u8"
       }
     ]
   },
