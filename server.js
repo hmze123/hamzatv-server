@@ -15,7 +15,7 @@ app.get('/api/data', (req, res) => {
       },
       {
         "name": "beIN Sport 1",
-        "logo": "",
+        "logo": "bein-sports-1-logo.jpg",
         "streamUrl": "http://het104a.4rouwanda-shop.store/live/918454578001/index.m3u8"
       }
     ]
