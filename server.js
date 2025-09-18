@@ -16,7 +16,7 @@ app.get('/api/data', (req, res) => {
       {
         "name": "beIN Sport 1",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Aljazeera_eng.svg/512px-Aljazeera_eng.svg.png",
-        "streamUrl": "http://het104a.4rouwanda-shop.store/live/918454578001/index.m3u8"
+        "streamUrl": "https://het104a.4rouwanda-shop.store/live/918454578001/index.m3u8"
       }
     ]
   },
