@@ -28,6 +28,7 @@ jobs:
 
       - name: Commit and Push
         run: |
+          pip install requests beautifulsoup4
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
