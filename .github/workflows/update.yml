@@ -31,12 +31,15 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # جلب التعديلات لتجنب التعارض
-          git pull origin main --rebase || echo "No changes to pull"
+          # جلب النسخة الأخيرة من السيرفر وتجاهل أي تعارض محلي
+          git fetch origin main
+          git reset --mixed origin main
           
-          # إضافة الملف وتجاهل الخطأ إذا لم يتغير شيء
+          # إضافة الملف المحدث الآن
           git add api.json
-          git commit -m "Update live matches" || exit 0
           
-          # الرفع النهائي
-          git push origin main
+          # محاولة الحفظ، وإذا لم يوجد تغيير لن يتوقف السكريبت
+          git commit -m "Update live matches" || echo "No changes to commit"
+          
+          # الرفع بقوة (Force Push) لإنهاء مشكلة الـ rejected تماماً
+          git push origin main --force
