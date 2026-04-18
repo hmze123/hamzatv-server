@@ -37,6 +37,7 @@
             "minute": 90,
             "status": "FT",
             "league": "World Cup - Women - Qualification Concacaf",
+            "time": "00:00",
             "stream_url": ""
         },
         {
@@ -49,6 +50,7 @@
             "minute": 90,
             "status": "FT",
             "league": "World Cup - Women - Qualification Concacaf",
+            "time": "00:00",
             "stream_url": ""
         },
         {
@@ -61,6 +63,7 @@
             "minute": 90,
             "status": "FT",
             "league": "Primera División",
+            "time": "00:00",
             "stream_url": ""
         },
         {
@@ -73,6 +76,7 @@
             "minute": 90,
             "status": "FT",
             "league": "Primera B",
+            "time": "00:00",
             "stream_url": ""
         },
         {
@@ -85,6 +89,7 @@
             "minute": 90,
             "status": "FT",
             "league": "Primera B",
+            "time": "00:00",
             "stream_url": ""
         },
         {
@@ -97,6 +102,7 @@
             "minute": 90,
             "status": "FT",
             "league": "Liga Pro",
+            "time": "00:30",
             "stream_url": ""
         },
         {
@@ -109,6 +115,7 @@
             "minute": 90,
             "status": "FT",
             "league": "Division di Honor",
+            "time": "00:30",
             "stream_url": ""
         },
         {
@@ -121,6 +128,7 @@
             "minute": 90,
             "status": "FT",
             "league": "Segunda División",
+            "time": "00:30",
             "stream_url": ""
         },
         {
@@ -133,6 +141,7 @@
             "minute": 90,
             "status": "FT",
             "league": "World Cup - Women - Qualification Concacaf",
+            "time": "01:00",
             "stream_url": ""
         },
         {
@@ -145,246 +154,7 @@
             "minute": 90,
             "status": "FT",
             "league": "Liga MX",
-            "stream_url": ""
-        },
-        {
-            "team1": "Mazatlán",
-            "team1_logo": "https://media.api-sports.io/football/teams/14002.png",
-            "team2": "Club Queretaro",
-            "team2_logo": "https://media.api-sports.io/football/teams/2290.png",
-            "team1_score": 1,
-            "team2_score": 1,
-            "minute": 90,
-            "status": "FT",
-            "league": "Liga MX",
-            "stream_url": ""
-        },
-        {
-            "team1": "Correcaminos Uat",
-            "team1_logo": "https://media.api-sports.io/football/teams/2313.png",
-            "team2": "Alebrijes de Oaxaca",
-            "team2_logo": "https://media.api-sports.io/football/teams/2300.png",
-            "team1_score": 1,
-            "team2_score": 3,
-            "minute": 90,
-            "status": "FT",
-            "league": "Liga de Expansión MX",
-            "stream_url": ""
-        },
-        {
-            "team1": "USA W",
-            "team1_logo": "https://media.api-sports.io/football/teams/1718.png",
-            "team2": "Japan W",
-            "team2_logo": "https://media.api-sports.io/football/teams/1720.png",
-            "team1_score": 3,
-            "team2_score": 0,
-            "minute": 90,
-            "status": "FT",
-            "league": "Friendlies Women",
-            "stream_url": ""
-        },
-        {
-            "team1": "Juventud Antoniana",
-            "team1_logo": "https://media.api-sports.io/football/teams/1961.png",
-            "team2": "Bartolomé Mitre",
-            "team2_logo": "https://media.api-sports.io/football/teams/25756.png",
-            "team1_score": 1,
-            "team2_score": 2,
-            "minute": 90,
-            "status": "FT",
-            "league": "Torneo Federal A",
-            "stream_url": ""
-        },
-        {
-            "team1": "Municipal Liberia",
-            "team1_logo": "https://media.api-sports.io/football/teams/826.png",
-            "team2": "CS Cartagines",
-            "team2_logo": "https://media.api-sports.io/football/teams/820.png",
-            "team1_score": 1,
-            "team2_score": 0,
-            "minute": 90,
-            "status": "FT",
-            "league": "Primera División",
-            "stream_url": ""
-        },
-        {
-            "team1": "Tacoma Defiance",
-            "team1_logo": "https://media.api-sports.io/football/teams/4020.png",
-            "team2": "St. Louis City II",
-            "team2_logo": "https://media.api-sports.io/football/teams/18740.png",
-            "team1_score": 1,
-            "team2_score": 2,
-            "minute": 90,
-            "status": "FT",
-            "league": "MLS Next Pro",
-            "stream_url": ""
-        },
-        {
-            "team1": "Vancouver Whitecaps",
-            "team1_logo": "https://media.api-sports.io/football/teams/1603.png",
-            "team2": "Sporting Kansas City",
-            "team2_logo": "https://media.api-sports.io/football/teams/1611.png",
-            "team1_score": 3,
-            "team2_score": 0,
-            "minute": 90,
-            "status": "FT",
-            "league": "Major League Soccer",
-            "stream_url": ""
-        },
-        {
-            "team1": "Dorados",
-            "team1_logo": "https://media.api-sports.io/football/teams/2297.png",
-            "team2": "Tapatío",
-            "team2_logo": "https://media.api-sports.io/football/teams/14278.png",
-            "team1_score": 3,
-            "team2_score": 1,
-            "minute": 90,
-            "status": "FT",
-            "league": "Liga de Expansión MX",
-            "stream_url": ""
-        },
-        {
-            "team1": "South Melbourne",
-            "team1_logo": "https://media.api-sports.io/football/teams/3811.png",
-            "team2": "Hekari United",
-            "team2_logo": "https://media.api-sports.io/football/teams/8141.png",
-            "team1_score": 1,
-            "team2_score": 2,
-            "minute": 90,
-            "status": "FT",
-            "league": "OFC Pro League",
-            "stream_url": ""
-        },
-        {
-            "team1": "Yokohama F. Marinos",
-            "team1_logo": "https://media.api-sports.io/football/teams/296.png",
-            "team2": "Kawasaki Frontale",
-            "team2_logo": "https://media.api-sports.io/football/teams/294.png",
-            "team1_score": 1,
-            "team2_score": 2,
-            "minute": 90,
-            "status": "FT",
-            "league": "J1 League",
-            "stream_url": ""
-        },
-        {
-            "team1": "Consadole Sapporo",
-            "team1_logo": "https://media.api-sports.io/football/teams/279.png",
-            "team2": "Matsumoto Yamaga",
-            "team2_logo": "https://media.api-sports.io/football/teams/304.png",
-            "team1_score": 2,
-            "team2_score": 1,
-            "minute": 90,
-            "status": "FT",
-            "league": "J2/J3 League",
-            "stream_url": ""
-        },
-        {
-            "team1": "Hume City",
-            "team1_logo": "https://media.api-sports.io/football/teams/3804.png",
-            "team2": "St. Albans Saints",
-            "team2_logo": "https://media.api-sports.io/football/teams/9978.png",
-            "team1_score": 0,
-            "team2_score": 1,
-            "minute": 90,
-            "status": "FT",
-            "league": "Victoria NPL",
-            "stream_url": ""
-        },
-        {
-            "team1": "Edgeworth Eagles",
-            "team1_logo": "https://media.api-sports.io/football/teams/10204.png",
-            "team2": "Charlestown City Blues",
-            "team2_logo": "https://media.api-sports.io/football/teams/10203.png",
-            "team1_score": 2,
-            "team2_score": 1,
-            "minute": 90,
-            "status": "FT",
-            "league": "Northern NSW NPL",
-            "stream_url": ""
-        },
-        {
-            "team1": "New Lambton",
-            "team1_logo": "https://media.api-sports.io/football/teams/20789.png",
-            "team2": "West Wallsend",
-            "team2_logo": "https://media.api-sports.io/football/teams/11195.png",
-            "team1_score": 0,
-            "team2_score": 0,
-            "minute": 90,
-            "status": "FT",
-            "league": "NNSW League 1",
-            "stream_url": ""
-        },
-        {
-            "team1": "Kingborough Lions",
-            "team1_logo": "https://media.api-sports.io/football/teams/14102.png",
-            "team2": "Glenorchy Knights",
-            "team2_logo": "https://media.api-sports.io/football/teams/14101.png",
-            "team1_score": 3,
-            "team2_score": 1,
-            "minute": 90,
-            "status": "FT",
-            "league": "Tasmania NPL",
-            "stream_url": ""
-        },
-        {
-            "team1": "Ulverstone",
-            "team1_logo": "https://media.api-sports.io/football/teams/23514.png",
-            "team2": "South Hobart",
-            "team2_logo": "https://media.api-sports.io/football/teams/14106.png",
-            "team1_score": 0,
-            "team2_score": 6,
-            "minute": 90,
-            "status": "FT",
-            "league": "Tasmania NPL",
-            "stream_url": ""
-        },
-        {
-            "team1": "Riverside",
-            "team1_logo": "https://media.api-sports.io/football/teams/14105.png",
-            "team2": "Launceston United",
-            "team2_logo": "https://media.api-sports.io/football/teams/21047.png",
-            "team1_score": 2,
-            "team2_score": 0,
-            "minute": 90,
-            "status": "FT",
-            "league": "Tasmania NPL",
-            "stream_url": ""
-        },
-        {
-            "team1": "Taroona",
-            "team1_logo": "https://media.api-sports.io/football/teams/23528.png",
-            "team2": "Clarence Zebras II",
-            "team2_logo": "https://media.api-sports.io/football/teams/23521.png",
-            "team1_score": 3,
-            "team2_score": 1,
-            "minute": 90,
-            "status": "FT",
-            "league": "Tasmania Southern Championship",
-            "stream_url": ""
-        },
-        {
-            "team1": "South East Utd. U21",
-            "team1_logo": "https://media.api-sports.io/football/teams/23526.png",
-            "team2": "University of Tasmania",
-            "team2_logo": "https://media.api-sports.io/football/teams/23529.png",
-            "team1_score": 0,
-            "team2_score": 3,
-            "minute": 90,
-            "status": "FT",
-            "league": "Tasmania Southern Championship",
-            "stream_url": ""
-        },
-        {
-            "team1": "Hobart City",
-            "team1_logo": "https://media.api-sports.io/football/teams/23523.png",
-            "team2": "Hobart Utd.",
-            "team2_logo": "https://media.api-sports.io/football/teams/23524.png",
-            "team1_score": 5,
-            "team2_score": 0,
-            "minute": 90,
-            "status": "FT",
-            "league": "Tasmania Southern Championship",
+            "time": "01:00",
             "stream_url": ""
         }
     ]
