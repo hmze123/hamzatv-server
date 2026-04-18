@@ -1,55 +1,68 @@
 import requests
+from bs4 import BeautifulSoup
 import json
 import os
-from datetime import datetime
 
-def fetch_matches():
-    # جلب تاريخ اليوم بتنسيق YYYY-MM-DD
-    today = datetime.now().strftime('%Y-%m-%d')
-    # تعديل الرابط لجلب مباريات اليوم بالكامل وليس المباشر فقط
-    url = f"https://v3.football.api-sports.io/fixtures?date={today}"
-    headers = {"x-apisports-key": os.getenv("RAPIDAPI_KEY")}
+def fetch_arabic_matches():
+    # سنستخدم مصدر بيانات رياضي عربي (مثال للتعامل مع هيكل المواقع العربية)
+    url = "https://www.filgoal.com/matches/" 
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    matches = []
     
     try:
         response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-            data = response.json()
-            matches = []
-            for item in data.get('response', []):
-              matches.append({
-    "team1": item['teams']['home']['name'],
-    "team1_logo": item['teams']['home']['logo'],
-    "team2": item['teams']['away']['name'],
-    "team2_logo": item['teams']['away']['logo'],
-    "team1_score": item['goals']['home'],
-    "team2_score": item['goals']['away'],
-    "minute": item['fixture']['status']['elapsed'],
-    "status": item['fixture']['status']['short'],
-    "league": item['league']['name'],
-    "match_time": item['fixture']['date'][11:16], # الوقت فقط (20:30)
-    "date_time": item['fixture']['date'][:-6],    # التاريخ الكامل للمنبه (2024-04-18T20:30:00)
-    "stream_url": ""
-})
-            # جلب أهم 30 مباراة فقط لكي لا يكون التطبيق ثقيلاً
-            return matches[:30]
-    except Exception as e:
-        print(f"Error: {e}")
-        return []
-    return []
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # البحث عن حاوية المباريات (هذا الهيكل يتغير حسب الموقع المصدر)
+        match_containers = soup.select('.mc-list-container .match-container')
+        
+        for item in match_containers:
+            try:
+                team1 = item.select_one('.f').text.strip()
+                team2 = item.select_one('.s').text.strip()
+                score = item.select_one('.m').text.strip().replace('\n', '')
+                status = item.select_one('.match-status').text.strip()
+                time = item.select_one('.match-time').text.strip()
+                league = item.find_previous('h6').text.strip() if item.find_previous('h6') else "دوري غير محدد"
+                
+                # استخراج القناة والمعلق (إذا توفرا)
+                channel = "غير مدرجة"
+                commentator = "غير محدد"
+                details = item.select('.m-details span')
+                if len(details) > 0: channel = details[0].text.strip()
+                if len(details) > 1: commentator = details[1].text.strip()
+
+                matches.append({
+                    "team1": team1,
+                    "team1_logo": "", # المواقع العربية أحياناً تصعب جلب اللوجو، سنضع لوجو افتراضي
+                    "team2": team2,
+                    "team2_logo": "",
+                    "team1_score": score.split('-')[0] if '-' in score else "0",
+                    "team2_score": score.split('-')[1] if '-' in score else "0",
+                    "minute": "0",
+                    "status": "LIVE" if "جارية" in status else "NS",
+                    "status_ar": status,
+                    "league": league,
+                    "match_time": time,
+                    "date_time": "2024-04-18T" + time + ":00", # تاريخ تقريبي للمنبه
+                    "channel": channel,
+                    "commentator": commentator,
+                    "stream_url": ""
+                })
+            except: continue
+        return matches[:40]
+    except: return []
 
 def main():
-    all_matches = fetch_matches()
+    arabic_matches = fetch_arabic_matches()
     
-    # قراءة القنوات الحالية للحفاظ عليها
     full_data = {"categories": [], "live_matches": []}
     if os.path.exists('api.json'):
         with open('api.json', 'r', encoding='utf-8') as f:
-            try:
-                full_data = json.load(f)
+            try: full_data = json.load(f)
             except: pass
 
-    # تحديث قسم المباريات
-    full_data['live_matches'] = all_matches
+    full_data['live_matches'] = arabic_matches
     
     with open('api.json', 'w', encoding='utf-8') as f:
         json.dump(full_data, f, ensure_ascii=False, indent=4)
