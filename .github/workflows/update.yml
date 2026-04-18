@@ -27,23 +27,16 @@ jobs:
         run: python update_data.py
 
       - name: Commit and Push
-  run: |
-    git config --local user.email "action@github.com"
-    git config --local user.name "GitHub Action"
-    
-    # Configure the origin remote if it doesn't exist
-    git remote add origin https://github.com/${{ github.repository }}.git || true
-    git remote set-url origin https://github.com/${{ github.repository }}.git
-    
-    # جلب النسخة الأخيرة من السيرفر وتجاهل أي تعارض محلي
-    git fetch origin main
-    git reset --mixed origin/main
-    
-    # إضافة الملف المحدث الآن
-    git add api.json
-    
-    # محاولة الحفظ، وإذا لم يوجد تغيير لن يتوقف السكريبت
-    git commit -m "Update live matches" || echo "No changes to commit"
-    
-    # الرفع بقوة (Force Push) لإنهاء مشكلة الـ rejected تماماً
-    git push origin main --force
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          # جلب التعديلات لتجنب التعارض
+          git pull origin main --rebase || echo "No changes to pull"
+          
+          # إضافة الملف وتجاهل الخطأ إذا لم يتغير شيء
+          git add api.json
+          git commit -m "Update live matches" || exit 0
+          
+          # الرفع النهائي
+          git push origin main
