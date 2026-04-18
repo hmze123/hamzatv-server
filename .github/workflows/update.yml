@@ -1,12 +1,14 @@
 name: Live Match Updater
 on:
   schedule:
-    - cron: '*/20 * * * *' # تشغيل تلقائي كل 20 دقيقة
-  workflow_dispatch: # زر للتشغيل اليدوي للتجربة
+    - cron: '*/20 * * * *' # السطر 8 الآن منسق بشكل سليم
+  workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # إعطاء صلاحية الكتابة للمستودع
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -24,11 +26,11 @@ jobs:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
         run: python update_data.py
 
-    - name: Commit and Push
+      - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull origin main --rebase # هذه الإضافة ستحل مشكلة الـ rejected
+          git pull origin main --rebase
           git add api.json
           git commit -m "Update live matches" || exit 0
           git push origin main
