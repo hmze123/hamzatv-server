@@ -16,7 +16,7 @@ def fetch_matches():
             data = response.json()
             matches = []
             for item in data.get('response', []):
-               matches.append({
+              matches.append({
     "team1": item['teams']['home']['name'],
     "team1_logo": item['teams']['home']['logo'],
     "team2": item['teams']['away']['name'],
@@ -26,7 +26,8 @@ def fetch_matches():
     "minute": item['fixture']['status']['elapsed'],
     "status": item['fixture']['status']['short'],
     "league": item['league']['name'],
-    "time": item['fixture']['date'][11:16], # هذا السطر سيجلب الوقت مثل 20:30
+    "match_time": item['fixture']['date'][11:16], # الوقت فقط (20:30)
+    "date_time": item['fixture']['date'][:-6],    # التاريخ الكامل للمنبه (2024-04-18T20:30:00)
     "stream_url": ""
 })
             # جلب أهم 30 مباراة فقط لكي لا يكون التطبيق ثقيلاً
