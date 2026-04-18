@@ -1,14 +1,14 @@
 name: Live Match Updater
 on:
   schedule:
-    - cron: '*/20 * * * *' # السطر 8 الآن منسق بشكل سليم
+    - cron: '*/20 * * * *'
   workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # إعطاء صلاحية الكتابة للمستودع
+      contents: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -26,27 +26,17 @@ jobs:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
         run: python update_data.py
 
-    - name: Commit and Push
+      - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           
-          # 1. إخبار Git بتجاهل التغييرات الحالية مؤقتاً لسحب التحديثات
-          git add api.json
-          git stash
+          # جلب التعديلات لتجنب التعارض
+          git pull origin main --rebase || echo "No changes to pull"
           
-          # 2. سحب أي تحديثات جديدة من السيرفر (مثل تعديلاتك اليدوية)
-          git pull origin main --rebase
-          
-          # 3. استعادة الملف الذي أنشأه السكريبت ووضعه فوق النسخة المسحوبة
-          git stash pop || echo "No changes to pop"
-          
-          # 4. الرفع النهائي للسيرفر
+          # إضافة الملف وتجاهل الخطأ إذا لم يتغير شيء
           git add api.json
           git commit -m "Update live matches" || exit 0
-          git push origin main
           
-          # 4. الرفع النهائي
-          git add api.json
-          git commit -m "Update live matches" || exit 0
+          # الرفع النهائي
           git push origin main
