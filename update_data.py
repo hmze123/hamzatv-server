@@ -16,18 +16,19 @@ def fetch_matches():
             data = response.json()
             matches = []
             for item in data.get('response', []):
-                matches.append({
-                    "team1": item['teams']['home']['name'],
-                    "team1_logo": item['teams']['home']['logo'],
-                    "team2": item['teams']['away']['name'],
-                    "team2_logo": item['teams']['away']['logo'],
-                    "team1_score": item['goals']['home'] if item['goals']['home'] is not None else 0,
-                    "team2_score": item['goals']['away'] if item['goals']['away'] is not None else 0,
-                    "minute": item['fixture']['status']['elapsed'] if item['fixture']['status']['elapsed'] else 0,
-                    "status": item['fixture']['status']['short'], 
-                    "league": item['league']['name'],
-                    "stream_url": "" 
-                })
+               matches.append({
+    "team1": item['teams']['home']['name'],
+    "team1_logo": item['teams']['home']['logo'],
+    "team2": item['teams']['away']['name'],
+    "team2_logo": item['teams']['away']['logo'],
+    "team1_score": item['goals']['home'],
+    "team2_score": item['goals']['away'],
+    "minute": item['fixture']['status']['elapsed'],
+    "status": item['fixture']['status']['short'],
+    "league": item['league']['name'],
+    "time": item['fixture']['date'][11:16], # هذا السطر سيجلب الوقت مثل 20:30
+    "stream_url": ""
+})
             # جلب أهم 30 مباراة فقط لكي لا يكون التطبيق ثقيلاً
             return matches[:30]
     except Exception as e:
