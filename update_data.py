@@ -30,7 +30,7 @@ def fetch_matches():
     "stream_url": ""
 })
             # جلب أهم 30 مباراة فقط لكي لا يكون التطبيق ثقيلاً
-            return matches[:30]
+            return matches[:10]
     except Exception as e:
         print(f"Error: {e}")
         return []
