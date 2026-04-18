@@ -26,11 +26,22 @@ jobs:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
         run: python update_data.py
 
-      - name: Commit and Push
+     - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          
+          # 1. حفظ التغييرات مؤقتاً (Stash) لتنظيف المستودع
+          git add api.json
+          git stash
+          
+          # 2. جلب التعديلات الأخيرة من السيرفر
           git pull origin main --rebase
+          
+          # 3. إعادة تطبيق التعديلات التي قام بها السكريبت
+          git stash pop || echo "No changes to pop"
+          
+          # 4. الرفع النهائي
           git add api.json
           git commit -m "Update live matches" || exit 0
           git push origin main
