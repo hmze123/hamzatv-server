@@ -1,9 +1,11 @@
 {
-    "categories": [
-        {
-            "name": "قنواتي",
-            "channels": []
-        }
-    ],
-    "live_matches": []
+  "categories": [
+    {
+      "name": "قنوات رياضية",
+      "channels": [
+        { "name": "beIN 1", "url": "رابط القناة", "logo": "رابط اللوجو" }
+      ]
+    }
+  ],
+  "live_matches": []
 }
